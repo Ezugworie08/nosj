@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carl FK | JSON</title>
+</head>
+<body>
+    {% block content %}
+        {% if status_message %}
+            {{ status_message }}
+        {% endif %}
+        {{ form.non_field_errors }}
+        {% if form.is_multipart %}
+            <form enctype="multipart/form-data" method="post" action="">
+        {% else %}
+            <form method="post" action="">
+        {% endif %}
+                {% csrf_token %}
+                {{ form.file.errors }}
+                {{ form.file }}
+                <input type="submit" name="submit" value="Upload JSON">
+            </form>
+    {% endblock content %}
+</body>
+</html>
