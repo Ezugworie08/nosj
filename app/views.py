@@ -7,6 +7,7 @@ from django.views.generic import FormView, TemplateView
 
 from app.forms import JSONUploadForm
 # Create your views here.
+
 # Based on my research, Python has this ultimate file MIME checker called "Magic"
 # As this app grows in complexity and function, we'd consider that module.
 # Also, to make life easier with sending message to the templates,
